@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛒 Lista de Compras da Família</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🛒 Lista da Família</h1>
+            <p class="subtitulo">Compras do Mês - Julho 2026</p>
+            <div class="membros" id="membrosHeader"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tabs">
+            <button class="active" data-tab="lista">📋 Lista</button>
+            <button data-tab="pesquisa">🔍 Pesquisar</button>
+            <button data-tab="membros">👥 Membros</button>
+        </div>
+
+        <section class="tab active" id="tab-lista">
+            <h2>📋 Lista de Compras</h2>
+            <button class="btn-principal" onclick="abrirModal()">➕ Adicionar Item</button>
+            <div id="listaItens"></div>
+            <div class="resumo" id="resumo"></div>
+            <div id="sugestoesContainer"></div>
+        </section>
+
+        <section class="tab" id="tab-pesquisa">
+            <h2>🔍 Pesquisar Itens</h2>
+            <div class="busca">
+                <input type="text" id="pesquisaInput" placeholder="Digite o nome do item..." oninput="buscar()">
+            </div>
+            <div id="resultadosPesquisa"></div>
+            <div id="sugestoesPesquisa"></div>
+        </section>
+
+        <section class="tab" id="tab-membros">
+            <h2>👥 Membros da Família</h2>
+            <div id="listaMembros"></div>
+            <div class="atividades">
+                <h3>📊 Últimas Atividades</h3>
+                <div id="atividades"></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modalAdicionar">
+        <div class="modal-content">
+            <h2>➕ Adicionar Item</h2>
+            <div class="form-group">
+                <label>Nome do item *</label>
+                <input type="text" id="modalNome" placeholder="Ex: Leite">
+            </div>
+            <div class="form-group">
+                <label>Quantidade</label>
+                <input type="number" id="modalQtd" value="1" min="1">
+            </div>
+            <div class="form-group">
+                <label>Tamanho</label>
+                <input type="text" id="modalTamanho" placeholder="Ex: 1L, 500g">
+            </div>
+            <div class="form-group">
+                <label>Marca (opcional)</label>
+                <input type="text" id="modalMarca" placeholder="Ex: Italac">
+            </div>
+            <div class="form-group">
+                <label>Preço (opcional)</label>
+                <input type="number" id="modalPreco" placeholder="0,00" step="0.01">
+            </div>
+            <div class="form-group">
+                <label>Supermercado (opcional)</label>
+                <input type="text" id="modalMercado" placeholder="Ex: Extra">
+            </div>
+            <div class="modal-botoes">
+                <button class="btn-salvar" onclick="adicionarItem()">✅ Adicionar</button>
+                <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>🛒 Sistema de Compras da Família v1.0</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
