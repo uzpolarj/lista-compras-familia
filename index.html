@@ -11,71 +11,147 @@
         <div class="container">
             <h1>🛒 Lista da Família</h1>
             <p class="subtitulo">Compras do Mês - Julho 2026</p>
-            <div class="membros" id="membrosHeader"></div>
+            <div class="membros" id="membrosHeader">
+                <!-- Inserido via JavaScript -->
+            </div>
         </div>
     </header>
 
     <main class="container">
+        <!-- Tabs -->
         <div class="tabs">
             <button class="active" data-tab="lista">📋 Lista</button>
             <button data-tab="pesquisa">🔍 Pesquisar</button>
             <button data-tab="membros">👥 Membros</button>
         </div>
 
+        <!-- ======================================== -->
+        <!-- ABA: LISTA DE COMPRAS                    -->
+        <!-- ======================================== -->
         <section class="tab active" id="tab-lista">
             <h2>📋 Lista de Compras</h2>
-            <button class="btn-principal" onclick="abrirModal()">➕ Adicionar Item</button>
-            <div id="listaItens"></div>
-            <div class="resumo" id="resumo"></div>
+            
+            <button class="btn-principal" onclick="abrirModal()">
+                ➕ Adicionar Item
+            </button>
+
+            <div id="listaItens">
+                <!-- Inserido via JavaScript -->
+            </div>
+
+            <div class="resumo" id="resumo">
+                <!-- Inserido via JavaScript -->
+            </div>
+
             <div id="sugestoesContainer"></div>
         </section>
 
+        <!-- ======================================== -->
+        <!-- ABA: PESQUISA                           -->
+        <!-- ======================================== -->
         <section class="tab" id="tab-pesquisa">
             <h2>🔍 Pesquisar Itens</h2>
+            
             <div class="busca">
-                <input type="text" id="pesquisaInput" placeholder="Digite o nome do item..." oninput="buscar()">
+                <input type="text" id="pesquisaInput" 
+                       placeholder="Digite o nome do item, marca ou mercado..." 
+                       oninput="buscar()">
             </div>
-            <div id="resultadosPesquisa"></div>
+
+            <div id="resultadosPesquisa">
+                <div class="vazio">
+                    <p>Digite algo para pesquisar</p>
+                </div>
+            </div>
+
             <div id="sugestoesPesquisa"></div>
         </section>
 
+        <!-- ======================================== -->
+        <!-- ABA: MEMBROS                           -->
+        <!-- ======================================== -->
         <section class="tab" id="tab-membros">
             <h2>👥 Membros da Família</h2>
-            <div id="listaMembros"></div>
-            <div class="atividades">
+            
+            <div id="listaMembros">
+                <!-- Inserido via JavaScript -->
+            </div>
+
+            <!-- Mercados -->
+            <div class="info-box">
+                <h3>🏪 Mercados</h3>
+                <div id="listaMercados">
+                    <!-- Inserido via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Marcas -->
+            <div class="info-box">
+                <h3>🏷️ Marcas</h3>
+                <div id="listaMarcas">
+                    <!-- Inserido via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Atividades -->
+            <div class="info-box">
                 <h3>📊 Últimas Atividades</h3>
-                <div id="atividades"></div>
+                <div id="atividades">
+                    <!-- Inserido via JavaScript -->
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- ======================================== -->
+    <!-- MODAL: ADICIONAR ITEM                    -->
+    <!-- ======================================== -->
     <div class="modal" id="modalAdicionar">
         <div class="modal-content">
             <h2>➕ Adicionar Item</h2>
+            
+            <!-- Nome com auto-complete -->
             <div class="form-group">
                 <label>Nome do item *</label>
-                <input type="text" id="modalNome" placeholder="Ex: Leite">
+                <input type="text" id="modalNome" 
+                       placeholder="Digite o nome do item..."
+                       oninput="atualizarTamanhosDisponiveis()">
+                <div id="sugestoesNomes" style="display:none; background:white; border:1px solid #e2e8f0; border-radius:8px; margin-top:4px; max-height:150px; overflow-y:auto;"></div>
             </div>
+
+            <!-- Sugestão de tamanhos -->
+            <div id="sugestoesTamanhos" style="font-size:12px; color:#64748b; margin:4px 0;"></div>
+
+            <!-- Quantidade -->
             <div class="form-group">
                 <label>Quantidade</label>
                 <input type="number" id="modalQtd" value="1" min="1">
             </div>
+
+            <!-- Tamanho -->
             <div class="form-group">
                 <label>Tamanho</label>
-                <input type="text" id="modalTamanho" placeholder="Ex: 1L, 500g">
+                <input type="text" id="modalTamanho" placeholder="Ex: 1L, 500g, 5kg">
             </div>
+
+            <!-- Marca -->
             <div class="form-group">
                 <label>Marca (opcional)</label>
-                <input type="text" id="modalMarca" placeholder="Ex: Italac">
+                <input type="text" id="modalMarca" placeholder="Ex: Italac, Tio João">
             </div>
+
+            <!-- Preço -->
             <div class="form-group">
                 <label>Preço (opcional)</label>
                 <input type="number" id="modalPreco" placeholder="0,00" step="0.01">
             </div>
+
+            <!-- Supermercado -->
             <div class="form-group">
                 <label>Supermercado (opcional)</label>
-                <input type="text" id="modalMercado" placeholder="Ex: Extra">
+                <input type="text" id="modalMercado" placeholder="Ex: Extra, Atacadão">
             </div>
+
             <div class="modal-botoes">
                 <button class="btn-salvar" onclick="adicionarItem()">✅ Adicionar</button>
                 <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
@@ -85,7 +161,7 @@
 
     <footer>
         <div class="container">
-            <p>🛒 Sistema de Compras da Família v1.0</p>
+            <p>🛒 Sistema de Compras da Família v2.0</p>
         </div>
     </footer>
 
