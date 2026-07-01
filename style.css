@@ -20,6 +20,9 @@ body {
     width: 100%;
 }
 
+/* ============================================
+   HEADER
+   ============================================ */
 header {
     background: #1a1a2e;
     color: white;
@@ -69,6 +72,9 @@ header .subtitulo {
     background: #64748b;
 }
 
+/* ============================================
+   TABS
+   ============================================ */
 .tabs {
     display: flex;
     gap: 6px;
@@ -101,6 +107,9 @@ header .subtitulo {
     border-color: #3b82f6;
 }
 
+/* ============================================
+   TAB CONTENT
+   ============================================ */
 .tab {
     display: none;
     background: white;
@@ -120,6 +129,9 @@ header .subtitulo {
     color: #1a1a2e;
 }
 
+/* ============================================
+   BOTÃO PRINCIPAL
+   ============================================ */
 .btn-principal {
     width: 100%;
     padding: 14px;
@@ -139,6 +151,9 @@ header .subtitulo {
     transform: scale(1.01);
 }
 
+/* ============================================
+   ITENS DA LISTA
+   ============================================ */
 .item {
     display: flex;
     justify-content: space-between;
@@ -166,6 +181,7 @@ header .subtitulo {
 .item .info .detalhes {
     font-size: 13px;
     color: #64748b;
+    line-height: 1.4;
 }
 
 .item .info .quem {
@@ -217,6 +233,9 @@ header .subtitulo {
     text-decoration: line-through;
 }
 
+/* ============================================
+   RESUMO
+   ============================================ */
 .resumo {
     margin-top: 16px;
     padding: 16px;
@@ -235,6 +254,9 @@ header .subtitulo {
     color: #3b82f6;
 }
 
+/* ============================================
+   VAZIO
+   ============================================ */
 .vazio {
     text-align: center;
     padding: 40px 20px;
@@ -246,6 +268,9 @@ header .subtitulo {
     margin-bottom: 12px;
 }
 
+/* ============================================
+   SUGESTÕES
+   ============================================ */
 .sugestao {
     display: flex;
     align-items: center;
@@ -281,6 +306,9 @@ header .subtitulo {
     color: #64748b;
 }
 
+/* ============================================
+   BUSCA
+   ============================================ */
 .busca {
     margin-bottom: 16px;
 }
@@ -298,6 +326,9 @@ header .subtitulo {
     border-color: #3b82f6;
 }
 
+/* ============================================
+   MODAL
+   ============================================ */
 .modal {
     display: none;
     position: fixed;
@@ -328,6 +359,7 @@ header .subtitulo {
 
 .modal-content h2 {
     margin-bottom: 16px;
+    font-size: 20px;
 }
 
 .modal-content .form-group {
@@ -389,26 +421,44 @@ header .subtitulo {
     background: #cbd5e1;
 }
 
-.atividades {
+/* ============================================
+   INFO BOX (Membros/Mercados/Marcas)
+   ============================================ */
+.info-box {
     margin-top: 16px;
     padding: 16px;
     background: #f8fafc;
     border-radius: 8px;
 }
 
-.atividades h3 {
+.info-box h3 {
     font-size: 14px;
     color: #475569;
     margin-bottom: 8px;
 }
 
-.atividades .atividade {
+.info-box .atividade {
     padding: 6px 0;
     border-bottom: 1px solid #f1f5f9;
     font-size: 13px;
     color: #64748b;
 }
 
+/* ============================================
+   EXCLUSIVIDADE (marcas exclusivas)
+   ============================================ */
+.exclusiva-badge {
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
     background: #1a1a2e;
     color: #64748b;
@@ -418,38 +468,66 @@ footer {
     font-size: 13px;
 }
 
+/* ============================================
+   RESPONSIVO - MOBILE
+   ============================================ */
 @media (max-width: 600px) {
     .container {
         padding: 0 10px;
     }
-    
+
+    header h1 {
+        font-size: 18px;
+    }
+
     .tabs button {
         font-size: 12px;
         padding: 8px 12px;
         min-width: 60px;
     }
-    
+
     .tab {
         padding: 16px;
     }
-    
+
     .item {
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
     }
-    
+
     .item .acoes {
         justify-content: flex-end;
     }
-    
+
     .resumo {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .modal-content {
         padding: 16px;
         margin: 10px;
     }
+}
+
+/* ============================================
+   SCROLL PERSONALIZADO
+   ============================================ */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }
